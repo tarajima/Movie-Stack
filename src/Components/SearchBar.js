@@ -21,7 +21,7 @@ class SearchBar extends Component {
     if (e.key === 'Enter') {
       if(this.state.searchValue) {
         this.setState({entered: true});
-        setTimeout(() => this.setState({entered: false}), 1)
+        setTimeout(() => this.setState({entered: false}), 1);
       }
     }
   }

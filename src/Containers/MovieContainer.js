@@ -33,8 +33,8 @@ class MovieContainer extends Component {
   }
 
     render () {
-      let movies = null;
-      if(this.state.movies !== '') {
+      let movies = <h1>No Movies Found</h1>;
+      if(this.state.movies.length > 0) {
         movies = (
           <div>
             {this.state.movies.map(movie => {
@@ -44,6 +44,7 @@ class MovieContainer extends Component {
                     release={movie.release_date}
                     rating={movie.vote_average}
                     description={movie.overview}
+                    id={movie.id}
                     key={movie.id}
                      />
                     })}
