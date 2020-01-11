@@ -1,14 +1,31 @@
 import React, { Component } from 'react';
 import axios from '../axiosConfig';
-import key from '../key';
+import keyConfigObject, { keyObject } from '../key';
 import IndividualMovie from '../Components/IndividualMovie';
 
 class MovieContainer extends Component {
   state = {
     movies: ''
   }
+  componentDidUpdate(prevProps) {
+    if(prevProps !== this.props) {
+      this.setMoviesHttpRequest();
+    }
+  }
+
   componentDidMount () {
-    axios.get(this.props.url, key)
+    this.setMoviesHttpRequest();
+  }
+
+  setMoviesHttpRequest() {
+    let config = keyConfigObject;
+    if(this.props.searchKeyword) {
+      config = {params: {
+        ...keyObject,
+        query: this.props.searchKeyword
+      }}
+    }
+    axios.get(this.props.url, config)
     .then(response =>  {
       this.setState({movies: response.data.results.slice(0,12)});
     })
@@ -26,18 +43,17 @@ class MovieContainer extends Component {
                     title={movie.title}
                     release={movie.release_date}
                     rating={movie.vote_average}
+                    description={movie.overview}
                     key={movie.id}
                      />
                     })}
           </div>
-        );
-      }
+        );}
       
       return (
         <div>
           {movies}
-        </div>
-        );
+        </div>);
     }
 }
 

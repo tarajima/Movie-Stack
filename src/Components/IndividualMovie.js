@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { imageBase } from '../axiosConfig';
 
-class IndividualMovie extends Component {
-  
-    render () {
-      return (
-      <div>
-        <img src={imageBase + '/w500' + this.props.src} alt={this.props.title}/>
-      </div>);
-    }
+
+
+const IndividualMovie = (props) => {
+  return (
+    <div>
+      <h1>{props.title}</h1>
+      <p>{props.release}</p>
+      <p>{props.rating}/10</p>
+      <p>{props.description}</p>
+      <img src={imageBase + '/w300' + props.src} alt={props.title}/>
+    </div>
+  );
 }
+
 
 export default IndividualMovie;
