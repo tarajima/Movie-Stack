@@ -5,6 +5,7 @@ import Nav from './Components/Nav';
 import HomePage from './Containers/HomePage';
 import SearchPage from './Containers/SearchPage';
 import MovieDetailsPage from './Containers/MovieDetailsPage';
+import AboutPage from './Containers/AboutPage';
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
         <Nav />
         <Switch>
           <Route path="/" exact component={HomePage} />
-          <Route path="/search/" exact component={SearchPage} />
+          <Route path="/search" exact component={SearchPage} />
           <Route path="/search/:keyword" exact component={SearchPage} />
-          <Route path="/movie/:id" exact component={MovieDetailsPage} />
+          <Route path="/movie/:id" component={MovieDetailsPage} />
+          <Route patch="/about" component={AboutPage} />
         </Switch>
       </div>
     </Router>

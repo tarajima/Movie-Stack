@@ -8,7 +8,6 @@ class SearchBar extends Component {
     entered: 'false'
   }
 
-
   onChangeHandler = (e) => {
     if (e.target.value.trim()) {
       this.setState({searchValue: e.target.value.trim()});
