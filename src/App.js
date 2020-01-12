@@ -6,6 +6,7 @@ import HomePage from './Containers/HomePage';
 import SearchPage from './Containers/SearchPage';
 import MovieDetailsPage from './Containers/MovieDetailsPage';
 import AboutPage from './Containers/AboutPage';
+import DiscoverPage from './Containers/DiscoverPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/search" exact component={SearchPage} />
           <Route path="/search/:keyword" exact component={SearchPage} />
           <Route path="/movie/:id" component={MovieDetailsPage} />
+          <Route path="/discover" component={DiscoverPage} />
           <Route patch="/about" component={AboutPage} />
         </Switch>
       </div>

@@ -19,11 +19,14 @@ class MovieContainer extends Component {
 
   setMoviesHttpRequest() {
     let config = keyConfigObject;
-    if(this.props.searchKeyword) {
+    if(this.props.searchKeyword) { // If this component is in the search page, set proper config
       config = {params: {
         ...keyObject,
         query: this.props.searchKeyword
       }}
+    }
+    if(this.props.discover === true) { // If this component is in the Discover page, set proper config
+      config = this.props.yearGenreConfig;
     }
     axios.get(this.props.url, config)
     .then(response =>  {
