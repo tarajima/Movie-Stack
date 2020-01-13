@@ -37,7 +37,7 @@ const UserRating = (props) => {
 
    return (
      <div>
-       {props.rating === -1 ? rateSelector : ratedStars}
+       {props.userRating === -1 ? rateSelector : ratedStars}
      </div>
    );
 }
