@@ -108,7 +108,7 @@ class MovieDetailsPage extends Component {
       <div>
         <SearchBar />
         <FavouriteButton favouriteHandler={this.favouriteHandler} favourited={this.state.favourited} />
-        <UserRating ratingHandler={this.ratingHandler} rating={this.state.userRating} />
+        <UserRating ratingHandler={this.ratingHandler} userRating={this.state.userRating} />
         {moviePoster}
         <h1>{this.state.movie.title}</h1>
         <h2>{this.state.movie.vote_average}/10</h2>

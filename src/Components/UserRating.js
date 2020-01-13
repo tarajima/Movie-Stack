@@ -19,11 +19,11 @@ const UserRating = (props) => {
 
   var ratedStars = null;
   const stars = [];
-  if (props.rating !== -1) {
-    for (let i = 1; i <= props.rating; i++) {
+  if (props.userRating !== -1) {
+    for (let i = 1; i <= props.userRating; i++) {
       stars.push('solid');
     }
-    for (let i = 1; i <= (5 - props.rating); i++) {
+    for (let i = 1; i <= (5 - props.userRating); i++) {
       stars.push('empty;')
     }
     ratedStars = stars.map((starType, index) => {

@@ -7,6 +7,8 @@ import SearchPage from './Containers/SearchPage';
 import MovieDetailsPage from './Containers/MovieDetailsPage';
 import AboutPage from './Containers/AboutPage';
 import DiscoverPage from './Containers/DiscoverPage';
+import FavouritesPage from './Containers/FavouritesPage';
+import RatingsPage from './Containers/RatingsPage';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/search/:keyword" exact component={SearchPage} />
           <Route path="/movie/:id" component={MovieDetailsPage} />
           <Route path="/discover" component={DiscoverPage} />
+          <Route path="/favourites" component={FavouritesPage} />
+          <Route path="/ratings" component={RatingsPage} />
           <Route patch="/about" component={AboutPage} />
         </Switch>
       </div>
