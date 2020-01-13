@@ -7,7 +7,7 @@ const ChooseYearGenre = (props) => {
   }
 
   return (
-    <form onSubmit={props.submit}>
+    <form>
       <label htmlFor="year">Year</label>
       <select name="year"
               id="year"
@@ -25,7 +25,6 @@ const ChooseYearGenre = (props) => {
           return <option value={genreObject.id} key={genreObject.id}>{genreObject.name}</option>;
         })}
       </select>
-      <input type="submit" value="Discover" />
     </form>
   );
 }

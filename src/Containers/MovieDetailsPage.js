@@ -28,6 +28,7 @@ class MovieDetailsPage extends Component {
     return (
       <div>
         <SearchBar />
+        
         {moviePoster}
         <h1>{this.state.movie.title}</h1>
         <h2>{this.state.movie.vote_average}/10</h2>

@@ -10,7 +10,6 @@ class HomePage extends Component {
 
   changeUrlHandler = (filter) => {
     this.setState({filterUrl: filter});
-    console.log(this.state.filterUrl);
   }
 
 

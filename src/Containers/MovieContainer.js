@@ -26,7 +26,7 @@ class MovieContainer extends Component {
       }}
     }
     if(this.props.discover === true) { // If this component is in the Discover page, set proper config
-      config = this.props.yearGenreConfig;
+      config = this.props.discoverConfig;
     }
     axios.get(this.props.url, config)
     .then(response =>  {

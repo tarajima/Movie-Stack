@@ -3,10 +3,11 @@ import ChooseYearGenre from '../Components/ChooseYearGenre';
 import axios from '../axiosConfig';
 import keyConfig, { keyObject } from '../key';
 import MovieContainer from './MovieContainer';
+import SortResults from '../Components/SortResults';
 
 class DiscoverPage extends Component {
   state = {
-    sortBy: 'popularity.asc',
+    sortBy: 'popularity.desc',
     selectedYear: 2020,
     selectedGenreIds: [],
     genreList: []
@@ -27,12 +28,16 @@ class DiscoverPage extends Component {
     this.setState({selectedGenreIds: selectedOptions});
   }
 
+  changeSortHandler = (event) => {
+    this.setState({sortBy: event.target.value});
+  }
+
   createAxiosConfig = () => {
     let config = {
       params: {
         ...keyObject,
         sort_by: this.state.sortBy,
-        year: this.state.selectedYear,
+        primary_release_year: this.state.selectedYear,
         with_genres: this.state.selectedGenreIds.toString()
       }
     }
@@ -51,7 +56,8 @@ class DiscoverPage extends Component {
         <ChooseYearGenre genres={this.state.genreList}
                           yearHandler={this.changeYearHandler}
                           genreHandler={this.changeGenreHandler} />
-        <MovieContainer yearGenreConfig={this.createAxiosConfig()}
+        <SortResults sortHandler={this.changeSortHandler} />
+        <MovieContainer discoverConfig={this.createAxiosConfig()}
                         discover={true}
                         url="/discover/movie" />
       </div>
