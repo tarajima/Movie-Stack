@@ -2,11 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/Nav.scss';
 
+
+window.addEventListener('resize', () => {
+  var width = document.documentElement.clientWidth;
+  if(width > 767) {
+    const navBar = document.querySelector(".navbar-nav");
+    if(navBar.style.display === "none") {
+      navBar.style.display = "";
+    }
+  }
+});
+
 const Nav = () => {
   const togglerClickHandler = () => {
     const navBar = document.querySelector(".navbar-nav");
     if(navBar.style.display === "none") {
-      navBar.style.display = "block";
+      navBar.style.display = "";
     } else {
       navBar.style.display = "none";
     }
