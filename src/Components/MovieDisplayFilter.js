@@ -1,8 +1,9 @@
 import React from 'react';
+import '../Styles/MovieDisplayFilter.scss';
 
 const MovieDisplayFilter = (props) => {
   return (
-    <div className="container">
+    <div className="MovieDisplayFilter container">
           <div className="row">
             <button onClick={() => props.click('/movie/popular')}
                     className="btn btn-secondary col">Popular</button>

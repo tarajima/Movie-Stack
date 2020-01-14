@@ -7,7 +7,7 @@ const UserRating = (props) => {
   const fiveArray = [1,2,3,4,5];
   const rateSelector = (
     <form>
-      <label htmlFor="rate">What's your rating?</label>
+      <label htmlFor="rate">What's your rating?</label> <br />
       <select name="rate" id="rate" onChange={props.ratingHandler}>
         <option value="none">Select...</option>
         {fiveArray.map(number => {

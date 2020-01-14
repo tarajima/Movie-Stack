@@ -17,3 +17,12 @@ code {
 h1, h2, h3, p {
   margin-bottom: 0;
 }
+
+// TYPOGRAPHY FOR ALL PAGES
+.page-title {
+  margin: 10px;
+
+  @media(max-width: 550px) {
+      font-size: 2em;
+  }
+}

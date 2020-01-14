@@ -1,0 +1,52 @@
+.MovieDetailsPage {
+  .movie-details-wrapper {
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.281);
+  }
+  h1, h2, p {
+    margin: 10px 0;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  .favourite-icon {
+    margin: 8px 0;
+  }
+  .UserRating {
+    margin: 8px 0;
+  }
+
+  @media(max-width: 650px) {
+    .movie-details-wrapper {
+      width: auto;
+      margin: 20px;
+    }
+    .movie-poster {
+      width: 250px;
+    }
+    .movie-title {
+      font-size: 1.8em;
+    }
+    h2 {
+      font-size: 1.1em;
+    }
+  }
+
+  @media(max-width: 450px) {
+    .movie-details-wrapper {
+      margin: 10px 0;
+      box-shadow: none;
+    }
+    .favourite-icon {
+      margin: 0px;
+    }
+    .UserRating {
+      margin: 4px 0;
+    }
+    .movie-poster {
+      width: 200px;
+    }
+  }
+}

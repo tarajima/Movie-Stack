@@ -14,7 +14,7 @@ class SearchPage extends Component {
 
   render () {
     return (
-      <div>
+      <div className="SearchPage">
         <SearchBar />
         <p>You searched: {this.props.match.params.keyword}</p>
         <MovieContainer url='/search/movie' searchKeyword={this.props.match.params.keyword} />

@@ -7,7 +7,8 @@ const FavouriteButton = (props) => {
   return (
       <FontAwesomeIcon icon={props.favourited ? fasHeart : farHeart}
                        size="2x"
-                       onClick={props.favouriteHandler} />
+                       onClick={props.favouriteHandler}
+                       className="favourite-icon" />
   );
 }
 

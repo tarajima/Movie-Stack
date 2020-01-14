@@ -13,30 +13,32 @@ class RatingsPage extends Component {
     } else {
       this.state = {movies: []}
     }
-
   }
 
   render() {
     return (
-      <div className="RatingsPage">
-        {this.state.movies.length > 0 ?
-          this.state.movies.map(movie => {
-            return <IndividualMovie src={movie.poster_path}
-                                    title={movie.original_title}
-                                    release={movie.release_date}
-                                    rating={movie.vote_average}
-                                    description={movie.overview}
-                                    userRating={movie.userRating}
-                                    id={movie.id}
-                                    key={movie.id}/>
-          })
-          : (
-          <div>
-            <SearchBar />
-            <h2>You have no rated movies. Search for a movie to give it a rating.</h2>
-          </div>
-          )
-        }
+      <div>
+        <h1 className="page-title">My Ratings</h1>
+        <div className="RatingsPage">
+          {this.state.movies.length > 0 ?
+            this.state.movies.map(movie => {
+              return <IndividualMovie src={movie.poster_path}
+                                      title={movie.original_title}
+                                      release={movie.release_date}
+                                      rating={movie.vote_average}
+                                      description={movie.overview}
+                                      userRating={movie.userRating}
+                                      id={movie.id}
+                                      key={movie.id}/>
+            })
+            : (
+            <div>
+              <SearchBar />
+              <p>You have no rated movies.<br />Search for a movie to give it a rating.</p>
+            </div>
+            )
+          }
+        </div>
       </div>
     );
   }

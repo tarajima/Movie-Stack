@@ -36,7 +36,8 @@ class SearchBar extends Component {
               placeholder="Search for a movie..."
               onChange={this.onChangeHandler}
               onKeyDown={this.enterInputHandler}
-               className="form-control form-control-lg" />
+               className="form-control form-control-lg"
+               style={{margin: "20px 0"}} />
       </div>
     );
   }

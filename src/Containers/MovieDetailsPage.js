@@ -4,6 +4,7 @@ import configKey from '../key';
 import SearchBar from '../Components/SearchBar';
 import FavouriteButton from '../Components/FavouriteButton';
 import UserRating from '../Components/UserRating';
+import '../Styles/MovieDetailsPage.scss';
 
 class MovieDetailsPage extends Component {
   state = {
@@ -98,22 +99,24 @@ class MovieDetailsPage extends Component {
   render () {
     let moviePoster = <img 
                         src={imageBase + 'w300' + this.state.movie.poster_path} 
-                        alt={this.state.movie.title} />
+                        alt={this.state.movie.title}
+                        className="movie-poster" />
     if(this.state.movie.poster_path === null || this.state.movie.poster_path === undefined) {
       moviePoster = <h2>No Poster Available</h2>
     }
 
-
     return (
-      <div>
+      <div className="MovieDetailsPage">
         <SearchBar />
-        <FavouriteButton favouriteHandler={this.favouriteHandler} favourited={this.state.favourited} />
-        <UserRating ratingHandler={this.ratingHandler} userRating={this.state.userRating} />
-        {moviePoster}
-        <h1>{this.state.movie.title}</h1>
-        <h2>{this.state.movie.vote_average}/10</h2>
-        <h2>{this.state.movie.release_date}</h2>
-        <p>{this.state.movie.overview}</p>
+        <div className="movie-details-wrapper">
+          <FavouriteButton favouriteHandler={this.favouriteHandler} favourited={this.state.favourited} />
+          <UserRating ratingHandler={this.ratingHandler} userRating={this.state.userRating} />
+          {moviePoster}
+          <h1 className="movie-title">{this.state.movie.title}</h1>
+          <h2>Average Rating: {this.state.movie.vote_average}/10</h2>
+          <h2>Release Date: {this.state.movie.release_date}</h2>
+          <p className="movie-description">{this.state.movie.overview}</p>
+        </div>
       </div>
     );
   }

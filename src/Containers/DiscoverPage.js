@@ -53,6 +53,7 @@ class DiscoverPage extends Component {
   render() {
     return (
       <div>
+        <h1 className="page-title">Discover</h1>
         <ChooseYearGenre genres={this.state.genreList}
                           yearHandler={this.changeYearHandler}
                           genreHandler={this.changeGenreHandler} />
