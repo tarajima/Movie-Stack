@@ -1,0 +1,43 @@
+.AboutPage {
+  margin: 20px;
+
+  .title {
+    margin: 10px;
+  }
+  p {
+    margin: 10px;
+    text-align: left;
+  }
+  .description {
+    font-size: 1.4em;
+  }
+  .attribution {
+    font-size: 1.2em;
+  }
+  img {
+    width: 300px;
+    margin-top: 20px;
+  }
+
+  @media(max-width: 550px) {
+    .title {
+      font-size: 2em;
+    }
+    .description {
+      font-size: 1.2em;
+    }
+    .attribution {
+      font-size: 1.1em;
+    }
+    img {
+      width: 200px;
+    }
+  }
+
+  @media(max-width:400px) {
+    .description {
+      font-size: 1.1em;
+    }
+    
+  }
+}
