@@ -15,7 +15,7 @@ class HomePage extends Component {
 
   render () {
     return (
-      <div>
+      <div className="HomePage">
         <SearchBar />
         <MovieDisplayFilter click={this.changeUrlHandler} />
         <MovieContainer url={this.state.filterUrl} />

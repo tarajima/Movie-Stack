@@ -1,0 +1,5 @@
+@import './mixins.scss';
+
+.MovieContainer, .FavouritesPage, .RatingsPage {
+  @include movie-flex-container;
+}

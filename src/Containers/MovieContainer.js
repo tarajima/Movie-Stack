@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from '../axiosConfig';
 import keyConfigObject, { keyObject } from '../key';
 import IndividualMovie from '../Components/IndividualMovie';
+import '../Styles/movieContainers.scss';
 
 class MovieContainer extends Component {
   state = {
@@ -39,7 +40,7 @@ class MovieContainer extends Component {
       let movies = <h1>No Movies Found</h1>;
       if(this.state.movies.length > 0) {
         movies = (
-          <div>
+          <div className="MovieContainer">
             {this.state.movies.map(movie => {
               return <IndividualMovie
                     src={movie.poster_path}

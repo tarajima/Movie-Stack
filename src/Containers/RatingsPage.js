@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import IndividualMovie from '../Components/IndividualMovie';
 import SearchBar from '../Components/SearchBar';
+import '../Styles/movieContainers.scss';
+
 
 class RatingsPage extends Component {
   constructor(props) {
@@ -16,7 +18,7 @@ class RatingsPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="RatingsPage">
         {this.state.movies.length > 0 ?
           this.state.movies.map(movie => {
             return <IndividualMovie src={movie.poster_path}

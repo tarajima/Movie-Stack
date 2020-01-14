@@ -31,11 +31,12 @@ class SearchBar extends Component {
     }
 
     return (
-      <div>
-        <input type="text"
+      <div className="col-auto">
+        <input type="search"
               placeholder="Search for a movie..."
               onChange={this.onChangeHandler}
-              onKeyDown={this.enterInputHandler} />
+              onKeyDown={this.enterInputHandler}
+               className="form-control form-control-lg" />
       </div>
     );
   }
