@@ -2,6 +2,15 @@
 
 A simple movie application created with the React framework. Movie data is obtained from The Movie Database API and local storage is used to save ratings and favorited movies.
 
+To install and run the project locally, clone the repo and in the terminal run:
+```
+npm install
+```
+Then:
+```
+npm start
+```
+
 ## Home
 <p>The initial home page displays the most popular movies. Users can switch between the Popular, Top Rated, Upcoming, and Now Playing tabs. Doing so will make a call to the proper API endpoint and display the movies for each respective category.</p>
 <p align="center">
